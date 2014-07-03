@@ -22,3 +22,15 @@ host = '192.168.1.246'
 port = 88
 protocol = 'http'
 ```
+
+## Running
+
+Browse to ```http://127.0.0.1:5000```
+
+Default port is 5000
+
+VLC plugin required for live stream.  I couldn't get Chrome to work, just used Firefox.
+
+## TODO
+
+Bunch o' stuff
