@@ -1,82 +1,5 @@
-<!doctype html>
-<html>
-<head>
-    <title></title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-</head>
-<body>
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">FosAdmin</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</div>
-
-<div class="container">
-    <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"  width="100%"  height="720" id="vlc" loop="yes" autoplay="yes" target="{{ cam.getRTSPStream() }}"></embed>
-    <hr />
-    <div class="row">
-        <div class="col-xs-6">
-            <a class="btn btn-primary" id="snapshot-btn">Take Snapshot</a>
-            <div id="snapshot"><img style="width:100%" /></div>
-        </div>
-        <div class="col-xs-6">
-            <table id="move-tbl" class="pull-right">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td><a class="btn btn-default" data-move="n"><i class="fa fa-arrow-up"></i></a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a class="btn btn-default" data-move="w"><i class="fa fa-arrow-left"></i></a></td>
-                    <td></td>
-                    <td><a class="btn btn-primary" data-move="h"><i class="fa fa-home"></i></a></td>
-                    <td></td>
-                    <td><a class="btn btn-default" data-move="e"><i class="fa fa-arrow-right"></i></a></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td><a class="btn btn-default" data-move="s"><i class="fa fa-arrow-down"></i></a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
+{% extends "layout.html" %}
+{% block body %}
 
 <script>
     var moving = false;
@@ -125,5 +48,53 @@
         });
     });
 </script>
-</body>
-</html>
+
+<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"  width="100%"  height="720" id="vlc" loop="yes" autoplay="yes" target="{{ cam.getRTSPStream() }}"></embed>
+<hr />
+<div class="row">
+    <div class="col-xs-6">
+        <a class="btn btn-primary" id="snapshot-btn">Take Snapshot</a>
+        <div id="snapshot"><img style="width:100%" /></div>
+    </div>
+    <div class="col-xs-6">
+        <table id="move-tbl" class="pull-right">
+            <tr>
+                <td></td>
+                <td></td>
+                <td><a class="btn btn-default" data-move="n"><i class="fa fa-arrow-up"></i></a></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a class="btn btn-default" data-move="w"><i class="fa fa-arrow-left"></i></a></td>
+                <td></td>
+                <td><a class="btn btn-primary" data-move="h"><i class="fa fa-home"></i></a></td>
+                <td></td>
+                <td><a class="btn btn-default" data-move="e"><i class="fa fa-arrow-right"></i></a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><a class="btn btn-default" data-move="s"><i class="fa fa-arrow-down"></i></a></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

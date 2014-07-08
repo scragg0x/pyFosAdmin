@@ -1,6 +1,5 @@
 from gevent import wsgi
 from fosadmin import app, manager
-from subprocess import call
 import logging
 
 
@@ -12,4 +11,4 @@ def server(port=5000):
 
 
 if __name__ == '__main__':
-    manager.run()
+    manager.run(default_command='server')
