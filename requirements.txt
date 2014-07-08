@@ -1,3 +1,5 @@
--e git+git://github.com/scragg0x/pyFosControl.git#egg=foscontrol
+-e git+git://github.com/MStrecke/pyFosControl.git#egg=foscontrol
 Flask
+Flask-Script
 simplejson
+gevent
