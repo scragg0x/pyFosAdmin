@@ -11,6 +11,5 @@ def server(port=5000):
     wsgi.WSGIServer(('', int(port)), app).serve_forever()
 
 
-
 if __name__ == '__main__':
     manager.run()
